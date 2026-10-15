@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper and Scissor</title>
+    </head>
+    <body>
+        <h1>Rock Paper and Scissor</h1>
+        <p>A game that let you pick between Rock, Paper, Scissor. Your opponent is a Computer, who randomize pick his move</p>
+
+        <div>
+            <button onclick="
+            console.log(pickComputerMove());
+
+            let result = '';
+            if(computerMove == 'Rock'){
+                result = `tie`;
+            }
+            else if (computerMove == 'Paper') {
+                result = 'You lose';
+            }
+            else if (computerMove == 'Scissor'){
+                result = 'You win.';
+            }
+
+            alert(`You pick Rock, Computer picked ${computerMove}. ${result}`);
+            ">Rock</button>
+
+            <button
+            onclick="
+            console.log(pickComputerMove());
+
+            result = '';
+
+            if(computerMove == 'Rock'){
+                result = `You win`;
+            }
+            else if (computerMove == 'Paper') {
+                result = 'tie';
+            }
+            else if (computerMove == 'Scissor'){
+                result = 'You lose.';
+            }
+
+            alert(`You pick Paper, Computer picked ${computerMove}. ${result}`);
+            "
+            >Paper</button>
+            <button
+            onclick="
+            console.log(pickComputerMove());
+
+             result = '';
+            if(computerMove == 'Rock'){
+                result = `you lose`;
+            }
+            else if (computerMove == 'Paper') {
+                result = 'you win';
+            }
+            else if (computerMove == 'Scissor'){
+                result = 'tie.';
+            }
+
+            alert(`You pick Scissor, Computer picked ${computerMove}. ${result}`);
+            "
+            >Scissor</button>
+        </div>
+
+        <script>
+            let computerMove = "";
+
+            function pickComputerMove(){
+                const randompick = Math.random();
+
+                if(randompick >= 0 && randompick <= 1/3){
+                    computerMove = "Rock";
+                } else if(randompick >= 1/3 && randompick <= 2/3){
+                    computerMove = "Paper";
+                } else if(randompick >= 2/3 && randompick <= 3/2){
+                    computerMove = "Scissor";
+                }
+            }
+        </script>
+    </body>
+</html>
